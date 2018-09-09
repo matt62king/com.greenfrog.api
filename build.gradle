@@ -1,0 +1,15 @@
+group 'com.greenfrog.api'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'org.springframework.boot:spring-boot-starter-web:2.0.4.RELEASE'
+    compile 'org.springframework.cloud:spring-cloud-starter-feign:1.4.5.RELEASE'
+}
