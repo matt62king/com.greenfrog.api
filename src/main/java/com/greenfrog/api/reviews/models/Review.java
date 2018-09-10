@@ -5,6 +5,7 @@ import com.greenfrog.utils.datastore.fecher.annotaions.IndexedID;
 import com.greenfrog.utils.datastore.mapper.annotations.Column;
 import com.greenfrog.utils.datastore.mapper.annotations.EntityKey;
 import com.greenfrog.utils.datastore.mapper.annotations.Store;
+import com.greenfrog.utils.datastore.mapper.types.DataType;
 
 @Store(value = "reviews", cache = true)
 public class Review {
@@ -20,6 +21,9 @@ public class Review {
 
     @Column("review_message")
     private String message;
+
+    @Column(value = "review_post_date", dataType = DataType.LONG)
+    private Long postDate;
 
     public void setKey(Key key) {
         this.key = key;
@@ -51,6 +55,14 @@ public class Review {
 
     public String getMessage() {
         return message;
+    }
+
+    public Long getPostDate() {
+        return postDate;
+    }
+
+    public void setPostDate(Long postDate) {
+        this.postDate = postDate;
     }
 
     @Override
